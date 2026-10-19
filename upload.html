@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>75Play 诊断日志上传</title>
+<style>
+  body{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#0a0f1e;color:#e8eef7;margin:0;padding:24px;line-height:1.6}
+  .card{background:#162138;border:1px solid #30426a;border-radius:12px;max-width:520px;margin:24px auto;padding:24px}
+  h1{font-size:20px;margin:0 0 12px}
+  p{font-size:14px;color:#a9b8d0;margin:8px 0}
+  ol{margin:8px 0 16px;padding-left:20px}
+  li{font-size:14px;margin:6px 0}
+  input[type=file]{display:block;width:100%;margin:16px 0;padding:10px;background:#1f2e48;border:1px dashed #486a9e;border-radius:8px;color:#e8eef7;font-size:14px}
+  button{width:100%;padding:14px;background:#3d6ff2;color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer}
+  button:active{background:#2e55c4}
+  .hint{font-size:12px;color:#7a8db0;margin-top:14px}
+  code{background:#0d1322;padding:2px 6px;border-radius:4px;color:#7ee787}
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>75Play 诊断日志上传</h1>
+    <p>用于把车机上的 75Play 诊断日志发给助手分析。步骤：</p>
+    <ol>
+      <li>先在 75Play：<b>设置 → 诊断 → 保存诊断报告</b>（记下保存路径，一般含 <code>.txt</code>）</li>
+      <li>回到本页，点下面按钮选择刚才保存的日志文件</li>
+      <li>点「上传」，<b>会自动跳到结果页</b>（一串 JSON 文本），找到里面 <code>"url": "https://..."</code> 的完整链接，复制发给我</li>
+    </ol>
+    <form action="https://uguu.se/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="files[]" required>
+      <button type="submit">上传日志</button>
+    </form>
+    <p class="hint">上传后结果页是一段 JSON，复制其中的 <code>url</code> 链接（形如 <code>https://h.uguu.se/xxxx.log</code>）发我即可。若结果页显示 <code>"success": false</code>，说明服务暂不可用，稍后再试。文件为临时托管，请尽快发送。</p>
+  </div>
+</body>
+</html>

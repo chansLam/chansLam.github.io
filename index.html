@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>75Play · 下载</title>
+<style>
+  :root { --accent: #00c853; --accent-2: #69f0ae; --bg: #0f1115; --card: #161a20; --text: #e6e8eb; --muted: #9aa0a6; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+  .card { background: var(--card); border-radius: 16px; padding: 40px 32px; max-width: 420px; width: 100%; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.06); }
+  .logo { width: 72px; height: 72px; border-radius: 18px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 800; margin: 0 auto 20px; color: #06210f; }
+  h1 { font-size: 24px; margin-bottom: 6px; }
+  .sub { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+  .version { display: inline-block; background: rgba(0,200,83,.12); color: var(--accent); border-radius: 999px; padding: 4px 14px; font-size: 13px; font-weight: 600; margin-bottom: 28px; }
+  .btn { display: block; width: 100%; padding: 14px; background: var(--accent); color: #06210f; border-radius: 12px; text-decoration: none; font-size: 16px; font-weight: 700; margin-bottom: 12px; transition: filter .15s; }
+  .btn:hover { filter: brightness(1.08); }
+  .btn2 { display: block; width: 100%; padding: 12px; background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 12px; text-decoration: none; font-size: 14px; font-weight: 600; margin-bottom: 10px; transition: filter .15s; }
+  .btn2:hover { filter: brightness(1.12); }
+  .hint { color: var(--muted); font-size: 11px; margin: -4px 0 14px; line-height: 1.6; }
+  .meta { color: var(--muted); font-size: 12px; line-height: 1.8; text-align: left; padding: 16px; background: rgba(255,255,255,.04); border-radius: 10px; margin-top: 8px; }
+  .meta b { color: var(--text); }
+  footer { margin-top: 20px; color: var(--muted); font-size: 11px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">75</div>
+    <h1>75Play</h1>
+    <div class="sub">长安 CS75 Plus 2020 车机 · 无线 CarPlay</div>
+    <div class="version">v2.0.0</div>
+    <a class="btn" href="downloads/75Play-v2.0.0-release.apk" download>下载 APK · 推荐</a>
+    <div class="hint">国内线路走 GitHub 代理、实时最新；jsDelivr/Fastly 走 CDN 缓存，更新后可能稍等生效</div>
+    <a class="btn2" href="https://ghfast.top/https://raw.githubusercontent.com/chansLam/chanslam.github.io/main/downloads/75Play-v2.0.0-release.apk" download>国内加速 1 · ghfast</a>
+    <a class="btn2" href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/chansLam/chanslam.github.io/main/downloads/75Play-v2.0.0-release.apk" download>国内加速 2 · ghproxy 镜像</a>
+    <a class="btn2" href="https://cdn.jsdelivr.net/gh/chansLam/chanslam.github.io@main/downloads/75Play-v2.0.0-release.apk" download>加速线路 3 · jsDelivr</a>
+    <a class="btn2" href="https://fastly.jsdelivr.net/gh/chansLam/chanslam.github.io@main/downloads/75Play-v2.0.0-release.apk" download>加速线路 4 · Fastly</a>
+    <a class="btn2" href="upload.html" style="border-color:#2e5fd0;color:#6ea8ff">上传诊断日志 · 车机浏览器用</a>
+    <div class="meta">
+      <b>安装说明：</b><br>
+      1. 若装过其他签名版本，请先卸载旧版<br>
+      2. APK 安装到<b>车机</b>（不是 iPhone）<br>
+      3. 手机连上车机热点，保持蓝牙开启<br>
+      4. 打开 75Play，点「连接手机」，iPhone 上允许 CarPlay<br><br>
+      <b>功能：</b>全屏沉浸 CarPlay · 悬浮小白点 · 车机应用 · 方控 / Siri · 多语言 · Root 隐藏导航栏<br>
+      <b>正式版与校验值：</b>见 <a href="https://github.com/chansLam/75Play/releases" style="color:var(--accent)">75Play 仓库 Release</a>
+    </div>
+    <footer>独立开源项目 · 非 Apple 认证 · 与 Apple 或长安无隶属关系 · CarPlay 归 Apple Inc. 所有</footer>
+  </div>
+</body>
+</html>
