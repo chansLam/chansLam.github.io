@@ -17,7 +17,10 @@
   .btn:hover { filter: brightness(1.08); }
   .btn2 { display: block; width: 100%; padding: 12px; background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 12px; text-decoration: none; font-size: 14px; font-weight: 600; margin-bottom: 10px; transition: filter .15s; }
   .btn2:hover { filter: brightness(1.12); }
+  .btn-new { border-color: #7c4dff; color: #b388ff; }
+  .btn-new:hover { filter: brightness(1.15); }
   .hint { color: var(--muted); font-size: 11px; margin: -4px 0 14px; line-height: 1.6; }
+  .section-title { color: var(--muted); font-size: 12px; margin: 20px 0 10px; text-transform: uppercase; letter-spacing: 1px; }
   .meta { color: var(--muted); font-size: 12px; line-height: 1.8; text-align: left; padding: 16px; background: rgba(255,255,255,.04); border-radius: 10px; margin-top: 8px; }
   .meta b { color: var(--text); }
   .shots { margin-top: 18px; text-align: left; }
@@ -33,14 +36,24 @@
     <h1>75Play</h1>
     <div class="sub">长安 CS75 Plus 2020 车机 · 无线 CarPlay</div>
     <div class="version">v2.0.1 · 测试版 debug</div>
-    <a class="btn" href="downloads/75Play-v2.0.1-arm-debug.apk" download>下载 APK · arm（车机）</a>
-    <a class="btn2" href="downloads/75Play-v2.0.1-x86-debug.apk" download>下载 APK · x86（模拟器/少数车机）</a>
+
+    <div class="section-title">🔥 NDK 优化版（最新）</div>
+    <a class="btn" href="downloads/75Play-v2.0.1-ndk-arm-debug.apk" download>下载 NDK 优化版 · arm（车机）</a>
+    <a class="btn2 btn-new" href="https://ghfast.top/https://raw.githubusercontent.com/chansLam/chanslam.github.io/main/downloads/75Play-v2.0.1-ndk-arm-debug.apk" download>NDK版 · ghfast 加速</a>
+    <div class="hint" style="margin-bottom:16px">NATIVE mDNS · Crypto · iAP2 下沉 · 音频流水线整合 · 库合并 2 so</div>
+
+    <div class="section-title">普通测试版</div>
+    <a class="btn2" href="downloads/75Play-v2.0.1-arm-debug.apk" download>下载普通版 · arm（车机）</a>
+    <a class="btn2" href="downloads/75Play-v2.0.1-x86-debug.apk" download>下载普通版 · x86（模拟器）</a>
     <div class="hint">国内线路走 GitHub 代理、实时最新；jsDelivr/Fastly 走 CDN 缓存，更新后可能稍等生效</div>
-    <a class="btn2" href="https://ghfast.top/https://raw.githubusercontent.com/chansLam/chanslam.github.io/main/downloads/75Play-v2.0.1-arm-debug.apk" download>arm · ghfast 加速</a>
-    <a class="btn2" href="https://cdn.jsdelivr.net/gh/chansLam/chanslam.github.io@main/downloads/75Play-v2.0.1-arm-debug.apk" download>arm · jsDelivr 加速</a>
-    <div class="hint" style="margin-top:8px">上一版正式包 v2.0.0：</div>
-    <a class="btn2" href="downloads/75Play-v2.0.0-release.apk" download>v2.0.0 release</a>
-    <a class="btn2" href="upload.html" style="border-color:#2e5fd0;color:#6ea8ff">上传诊断日志 · 车机浏览器用</a>
+    <a class="btn2" href="https://ghfast.top/https://raw.githubusercontent.com/chansLam/chanslam.github.io/main/downloads/75Play-v2.0.1-arm-debug.apk" download>普通版 arm · ghfast 加速</a>
+    <a class="btn2" href="https://cdn.jsdelivr.net/gh/chansLam/chanslam.github.io@main/downloads/75Play-v2.0.1-arm-debug.apk" download>普通版 arm · jsDelivr 加速</a>
+
+    <div class="section-title">历史版本</div>
+    <a class="btn2" href="downloads/75Play-v2.0.0-release.apk" download>v2.0.0 release（正式）</a>
+
+    <a class="btn2" href="upload.html" style="border-color:#2e5fd0;color:#6ea8ff;margin-top:12px">上传诊断日志 · 车机浏览器用</a>
+
     <div class="meta">
       <b>安装说明：</b><br>
       1. 若装过其他签名版本，请先卸载旧版<br>
@@ -50,6 +63,7 @@
       <b>功能：</b>全屏沉浸 CarPlay · 悬浮小白点 · 车机应用 · 方控 / Siri · 多语言 · Root 隐藏导航栏<br>
       <b>正式版与校验值：</b>见 <a href="https://github.com/chansLam/75Play/releases" style="color:var(--accent)">75Play 仓库 Release</a>
     </div>
+
     <div class="shots">
       <h2>实机截图 · v2.0.0</h2>
       <div class="grid">
@@ -62,6 +76,7 @@
         <a href="screenshots/app-manage.png" target="_blank"><img src="screenshots/app-manage.png" alt="车机应用管理"></a>
       </div>
     </div>
+
     <footer>独立开源项目 · 非 Apple 认证 · 与 Apple 或长安无隶属关系 · CarPlay 归 Apple Inc. 所有</footer>
   </div>
 </body>
