@@ -40,24 +40,26 @@
     <div class="version">v2.0.1 · 测试版 debug</div>
 
     <div class="section-title">🔧 最新修复版</div>
-    <a class="btn" href="downloads/75Play-v2.0.1-ndk-fix8-arm-debug.apk" download>下载最新修复版 · arm（车机）</a>
-    <a class="btn2 btn-new" href="https://ghfast.top/https://raw.githubusercontent.com/chansLam/chanslam.github.io/main/downloads/75Play-v2.0.1-ndk-fix8-arm-debug.apk" download>最新版 · ghfast 加速</a>
+    <a class="btn" href="downloads/75Play-v2.0.1-ndk-fix9-arm-debug.apk" download>下载最新修复版 · arm（车机）</a>
+    <a class="btn2 btn-new" href="https://ghfast.top/https://raw.githubusercontent.com/chansLam/chanslam.github.io/main/downloads/75Play-v2.0.1-ndk-fix9-arm-debug.apk" download>最新版 · ghfast 加速</a>
     <div class="fix-list">
-      <b>本版更新：</b><br>
+      <b>本版修复：</b><br>
+      ✅ HKDF SHA-512 块长修复（pair-setup 断开根因）<br>
+      ✅ native 调用失败回退 BouncyCastle<br>
+      ✅ pair-setup 阶段补详细日志<br><br>
+      <b>之前修复：</b><br>
       ✅ 应用列表：短按直接打开应用<br>
       ✅ 应用列表：长按弹出卸载菜单<br>
-      ✅ 应用列表：长按拖拽排序<br><br>
-      <b>之前修复：</b><br>
       ✅ bind 地址 fallback（EADDRNOTAVAIL 时尝试下一个地址）<br>
       ✅ v4 mDNS sendmsg 修复（v4 多播包根本没发出去）<br>
       ✅ 视频关键帧保护（drop-oldest 跳过关键帧，避免黑屏）<br>
       ✅ AirPlay control bind 地址选择（IPv4 优先 + 实时接口枚举）<br>
       ✅ AirPlay closeReason 日志（下次能看到具体失败原因）<br>
-      ✅ native mDNS netlink poll（避免 worker 被堵死）<br>
-      ✅ socket close order（先关 socket 再 join，端口立即释放）
+      ✅ native mDNS netlink poll（避免 worker 被堵死）
     </div>
 
     <div class="section-title">历史版本</div>
+    <a class="btn2" href="downloads/75Play-v2.0.1-ndk-fix8-arm-debug.apk" download>fix8（应用列表短按直接打开）</a>
     <a class="btn2" href="downloads/75Play-v2.0.1-ndk-fix7-arm-debug.apk" download>fix7（bind fallback + mDNS + 关键帧）</a>
     <a class="btn2" href="downloads/75Play-v2.0.1-ndk-fix6-arm-debug.apk" download>fix6（bind 地址选择）</a>
     <a class="btn2" href="downloads/75Play-v2.0.1-ndk-fix5-arm-debug.apk" download>fix5（AirPlay closeReason + mDNS poll）</a>
