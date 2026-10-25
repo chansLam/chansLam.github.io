@@ -40,23 +40,25 @@
     <div class="version">v2.0.1 · 测试版 debug</div>
 
     <div class="section-title">🔧 最新修复版</div>
-    <a class="btn" href="downloads/75Play-v2.0.1-ndk-fix6-arm-debug.apk" download>下载最新修复版 · arm（车机）</a>
-    <a class="btn2 btn-new" href="https://ghfast.top/https://raw.githubusercontent.com/chansLam/chanslam.github.io/main/downloads/75Play-v2.0.1-ndk-fix6-arm-debug.apk" download>最新版 · ghfast 加速</a>
+    <a class="btn" href="downloads/75Play-v2.0.1-ndk-fix7-arm-debug.apk" download>下载最新修复版 · arm（车机）</a>
+    <a class="btn2 btn-new" href="https://ghfast.top/https://raw.githubusercontent.com/chansLam/chanslam.github.io/main/downloads/75Play-v2.0.1-ndk-fix7-arm-debug.apk" download>最新版 · ghfast 加速</a>
     <div class="fix-list">
       <b>本版修复：</b><br>
-      ✅ AirPlay control bind 地址选择（IPv4 优先 + 实时接口枚举）<br>
-      ✅ 修复 EADDRNOTAVAIL 错误（不再选已 down 接口的 IPv6 地址）<br><br>
+      ✅ bind 地址 fallback（EADDRNOTAVAIL 时尝试下一个地址）<br>
+      ✅ v4 mDNS sendmsg 修复（v4 多播包根本没发出去）<br>
+      ✅ 视频关键帧保护（drop-oldest 跳过关键帧，避免黑屏）<br><br>
       <b>之前修复：</b><br>
+      ✅ AirPlay control bind 地址选择（IPv4 优先 + 实时接口枚举）<br>
       ✅ AirPlay closeReason 日志（下次能看到具体失败原因）<br>
       ✅ native mDNS netlink poll（避免 worker 被堵死）<br>
       ✅ socket close order（先关 socket 再 join，端口立即释放）<br>
       ✅ AirPlay 失败路径补 ConnectionLog<br>
       ✅ CarPlayMdnsNative release 异步化<br>
-      ✅ stage 7 加 hard timeout（15s）<br>
-      ✅ 清理 VPN 残留代码
+      ✅ stage 7 加 hard timeout（15s）
     </div>
 
     <div class="section-title">历史版本</div>
+    <a class="btn2" href="downloads/75Play-v2.0.1-ndk-fix6-arm-debug.apk" download>fix6（bind 地址选择）</a>
     <a class="btn2" href="downloads/75Play-v2.0.1-ndk-fix5-arm-debug.apk" download>fix5（AirPlay closeReason + mDNS poll）</a>
     <a class="btn2" href="downloads/75Play-v2.0.1-ndk-fix4-arm-debug.apk" download>fix4（AirPlay 日志 + mDNS 异步）</a>
     <a class="btn2" href="downloads/75Play-v2.0.1-ndk-fix3-arm-debug.apk" download>fix3（VPN 清理）</a>
