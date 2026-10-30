@@ -37,22 +37,21 @@
     <div class="logo">75</div>
     <h1>75Play</h1>
     <div class="sub">长安 CS75 Plus 2020 车机 · 无线 CarPlay</div>
-    <div class="version">v2.0.3-beta · 测试版（音量加减已通 · 静音修复）</div>
+    <div class="version">v2.0.4-beta · 测试版（导航投仪表盘 · 死代码清理）</div>
 
-    <div class="section-title">🔧 最新测试版（音量/静音修复）</div>
-    <a class="btn" href="downloads/75Play-v2.0.3-beta-mutefix.apk" download>下载最新测试版 APK · v2.0.3-beta（静音修复）</a>
-    <div class="hint" style="margin-top:6px">v4：音量加减已可用；修复 MUTE 键以 NONE 态广播时静音不触发 · 校验 sha256：<code>bd938b1fbea226e32d5db9c4cddda2eee5292884c58fad72ecc8ed0c076ef55d</code></div>
+    <div class="section-title">🔧 最新测试版（导航投仪表盘）</div>
+    <a class="btn" href="downloads/75Play-v2.0.4-beta-导航投仪表盘.apk" download>下载最新测试版 APK · v2.0.4-beta（导航投仪表盘）</a>
+    <div class="hint" style="margin-top:6px">基于 v2.0.3 release 基线，新增 CarPlay 导航启停 / 转向数据投仪表盘；清理一批生产零引用死代码 · 校验 sha256：<code>731a0448fe797a2984c01ece8bc81c333f97414de1604897faa552c575ae00cc</code></div>
     <div class="hint">国内线路走 GitHub 代理、实时最新；jsDelivr/Fastly 走 CDN 缓存，更新后可能稍等生效</div>
-    <a class="btn2" href="https://ghfast.top/https://raw.githubusercontent.com/chansLam/chanslam.github.io/main/downloads/75Play-v2.0.3-beta-mutefix.apk" download>最新测试版 · ghfast 加速</a>
-    <a class="btn2" href="https://cdn.jsdelivr.net/gh/chansLam/chanslam.github.io@main/downloads/75Play-v2.0.3-beta-mutefix.apk" download>最新测试版 · jsDelivr 加速</a>
+    <a class="btn2" href="https://ghfast.top/https://raw.githubusercontent.com/chansLam/chanslam.github.io/main/downloads/75Play-v2.0.4-beta-导航投仪表盘.apk" download>最新测试版 · ghfast 加速</a>
+    <a class="btn2" href="https://cdn.jsdelivr.net/gh/chansLam/chanslam.github.io@main/downloads/75Play-v2.0.4-beta-导航投仪表盘.apk" download>最新测试版 · jsDelivr 加速</a>
     <div class="fix-list">
       <b>本测试版特点：</b><br>
-      ✅ CarPlay 前台方控音量/静音修复（直调车机 coagent.settings）<br>
-      ✅ 音量加/减已可用（短按逐格）<br>
-      ✅ 静音修复：MUTE 键 NONE/DOWN 均触发 toggleMute<br>
-      ✅ 屏幕 Toast 诊断提示（按键到达 / 服务绑定 / transact 结果）<br>
+      ✅ 导航投仪表盘：CarPlay 导航启停（2000）/ 转向（2002）广播 → 车机仪表盘显示<br>
+      ✅ 死代码清理：删除 MFI 诊断 / P2P 启动 / 热点策略等一批生产零引用代码及对应测试<br>
+      ✅ 恢复误判死代码的 SidePanelSettings（侧边栏开关）与 P2pResetRequiredException<br>
       ✅ release 正式签名（CN=DiPlay）+ offline-MFI 身份<br>
-      ✅ 基于 v2.0.1 release（R8 收缩 / BC 握手 / native 音视频）<br><br>
+      ✅ 基于 v2.0.3 release 基线（方控音量/静音已修复）<br><br>
       <b>功能：</b><br>
       ✅ 无线 CarPlay 投屏<br>
       ✅ 应用列表短按直接打开<br>
@@ -60,8 +59,8 @@
       ✅ NDK 下沉（mDNS / audio）
     </div>
 
-    <div class="hint" style="margin-top:8px">上一版测试包 v2.0.3-beta（diagnose）：</div>
-    <a class="btn2" href="downloads/75Play-v2.0.3-beta-diagnose.apk" download>v2.0.3-beta diagnose</a>
+    <div class="hint" style="margin-top:8px">上一版测试包 v2.0.3-beta（静音修复）：</div>
+    <a class="btn2" href="downloads/75Play-v2.0.3-beta-mutefix.apk" download>v2.0.3-beta mutefix（静音修复）</a>
     <div class="hint" style="margin-top:8px">上一版 release 正式版 v2.0.1：</div>
     <a class="btn2" href="downloads/75Play-v2.0.1-release-arm.apk" download>v2.0.1 release · arm（车机）</a>
     <div class="hint" style="margin-top:8px">更早版本：</div>
