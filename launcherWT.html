@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LauncherWT · 长安车机原生桌面</title>
+<style>
+  :root { --accent: #00b0ff; --accent-2: #69f0ff; --bg: #0f1115; --card: #161a20; --text: #e6e8eb; --muted: #9aa0a6; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+  .card { background: var(--card); border-radius: 16px; padding: 40px 32px; max-width: 420px; width: 100%; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.06); }
+  .logo { width: 72px; height: 72px; border-radius: 18px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 800; margin: 0 auto 20px; color: #00222e; }
+  h1 { font-size: 24px; margin-bottom: 6px; }
+  .sub { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+  .version { display: inline-block; background: rgba(0,176,255,.12); color: var(--accent); border-radius: 999px; padding: 4px 14px; font-size: 13px; font-weight: 600; margin-bottom: 28px; }
+  .btn { display: block; width: 100%; padding: 14px; background: var(--accent); color: #00222e; border-radius: 12px; text-decoration: none; font-size: 16px; font-weight: 700; margin-bottom: 12px; transition: filter .15s; }
+  .btn:hover { filter: brightness(1.08); }
+  .btn2 { display: block; width: 100%; padding: 12px; background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 12px; text-decoration: none; font-size: 14px; font-weight: 600; margin-bottom: 10px; transition: filter .15s; }
+  .btn2:hover { filter: brightness(1.12); }
+  .hint { color: var(--muted); font-size: 11px; margin: -4px 0 14px; line-height: 1.6; word-break: break-all; }
+  .meta { color: var(--muted); font-size: 12px; line-height: 1.8; text-align: left; padding: 16px; background: rgba(255,255,255,.04); border-radius: 10px; margin-top: 8px; }
+  .meta b { color: var(--text); }
+  .note { color: #ffb74d; font-size: 12px; line-height: 1.7; text-align: left; padding: 12px 16px; background: rgba(255,152,0,.08); border-radius: 10px; margin: 8px 0 16px; }
+  footer { margin-top: 20px; color: var(--muted); font-size: 11px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">WT</div>
+    <h1>LauncherWT</h1>
+    <div class="sub">长安 CS75 Plus 2020 车机原生桌面</div>
+    <div class="version">v1.8.17.23.release</div>
+
+    <div class="section-title" style="color:var(--muted);font-size:12px;margin:0 0 10px;text-transform:uppercase;letter-spacing:1px">📦 原生桌面 APK</div>
+    <a class="btn" href="downloads/WT-Launcher-原生车机桌面-v1.8.17.23.apk" download>下载 LauncherWT APK · v1.8.17.23</a>
+    <div class="hint">包名 <code>com.android.launcherWT</code> · 校验 sha256：<br><code>06925568f8448c2af04ccff5850cab8e5d47915706d3768f40d1683785466eeb</code></div>
+    <div class="hint">国内线路走 GitHub 代理、实时最新；jsDelivr 走 CDN 缓存，更新后可能稍等生效</div>
+    <a class="btn2" href="https://ghfast.top/https://raw.githubusercontent.com/chansLam/chanslam.github.io/main/downloads/WT-Launcher-原生车机桌面-v1.8.17.23.apk" download>ghfast 加速</a>
+    <a class="btn2" href="https://cdn.jsdelivr.net/gh/chansLam/chanslam.github.io@main/downloads/WT-Launcher-原生车机桌面-v1.8.17.23.apk" download>jsDelivr 加速</a>
+
+    <div class="note">⚠️ 应用列表过滤说明：该桌面在生产模式下只显示内置白名单应用（约 15 个固定车载应用）。第三方安装的应用不会自动出现在桌面上。<br><br>
+    如需显示第三方应用，需 root 后在车机执行：<code>setprop sys.thirdapk.caninstall 1</code> 并重启桌面，即可关闭过滤、显示全部已装应用。</div>
+
+    <div class="meta">
+      <b>基本信息：</b><br>
+      • 包名：<code>com.android.launcherWT</code><br>
+      • 版本：<code>1.8.17.23.release</code><br>
+      • 组件：<code>com.autopai.applist</code>（autopai 桌面系统）<br>
+      • 目标：Android 4.4 / API 19 车机<br><br>
+      <b>关于过滤机制：</b><br>
+      桌面通过 <code>getprop sys.thirdapk.caninstall</code> 判断是否启用应用白名单过滤（生产模式默认启用），仅显示 <code>favoritesAppList</code> 白名单内的应用，其余静默隐藏。<br><br>
+      <b>相关项目：</b><a href="index.html" style="color:var(--accent)">返回 75Play 主页</a>
+    </div>
+
+    <footer>独立归档 · 车机原生桌面备份</footer>
+  </div>
+</body>
+</html>
