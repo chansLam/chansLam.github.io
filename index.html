@@ -37,21 +37,20 @@
     <div class="logo">75</div>
     <h1>75Play</h1>
     <div class="sub">长安 CS75 Plus 2020 车机 · 无线 CarPlay</div>
-    <div class="version">v2.0.4-beta · 测试版（导航投仪表盘 · 死代码清理）</div>
+    <div class="version">v2.0.5-beta · 测试版（应用列表自动刷新）</div>
 
-    <div class="section-title">🔧 最新测试版（导航投仪表盘）</div>
-    <a class="btn" href="downloads/75Play-v2.0.4-beta-导航投仪表盘.apk" download>下载最新测试版 APK · v2.0.4-beta（导航投仪表盘）</a>
-    <div class="hint" style="margin-top:6px">基于 v2.0.3 release 基线，新增 CarPlay 导航启停 / 转向数据投仪表盘；清理一批生产零引用死代码 · 校验 sha256：<code>731a0448fe797a2984c01ece8bc81c333f97414de1604897faa552c575ae00cc</code></div>
+    <div class="section-title">🔧 最新测试版（应用列表自动刷新）</div>
+    <a class="btn" href="downloads/75Play-v2.0.5-beta-应用列表自动刷新.apk" download>下载最新测试版 APK · v2.0.5-beta（应用列表自动刷新）</a>
+    <div class="hint" style="margin-top:6px">基于 v2.0.4 基线，新增监听系统包变更广播：车机安装 / 卸载 / 升级 APK 后主页应用列表立即自动刷新 · 校验 sha256：<code>968dcabce98cd8d9d6ba62c2b4827b4e9e5f134c96ca671ad32c2e28dd3cb8e7</code></div>
     <div class="hint">国内线路走 GitHub 代理、实时最新；jsDelivr/Fastly 走 CDN 缓存，更新后可能稍等生效</div>
-    <a class="btn2" href="https://ghfast.top/https://raw.githubusercontent.com/chansLam/chanslam.github.io/main/downloads/75Play-v2.0.4-beta-导航投仪表盘.apk" download>最新测试版 · ghfast 加速</a>
-    <a class="btn2" href="https://cdn.jsdelivr.net/gh/chansLam/chanslam.github.io@main/downloads/75Play-v2.0.4-beta-导航投仪表盘.apk" download>最新测试版 · jsDelivr 加速</a>
+    <a class="btn2" href="https://ghfast.top/https://raw.githubusercontent.com/chansLam/chanslam.github.io/main/downloads/75Play-v2.0.5-beta-应用列表自动刷新.apk" download>最新测试版 · ghfast 加速</a>
+    <a class="btn2" href="https://cdn.jsdelivr.net/gh/chansLam/chanslam.github.io@main/downloads/75Play-v2.0.5-beta-应用列表自动刷新.apk" download>最新测试版 · jsDelivr 加速</a>
     <div class="fix-list">
       <b>本测试版特点：</b><br>
-      ✅ 导航投仪表盘：CarPlay 导航启停（2000）/ 转向（2002）广播 → 车机仪表盘显示<br>
-      ✅ 死代码清理：删除 MFI 诊断 / P2P 启动 / 热点策略等一批生产零引用代码及对应测试<br>
-      ✅ 恢复误判死代码的 SidePanelSettings（侧边栏开关）与 P2pResetRequiredException<br>
-      ✅ release 正式签名（CN=DiPlay）+ offline-MFI 身份<br>
-      ✅ 基于 v2.0.3 release 基线（方控音量/静音已修复）<br><br>
+      ✅ 应用列表自动刷新：监听系统包变更广播（安装 / 卸载 / 升级），车机装卸 APK 后主页应用网格立即更新<br>
+      ✅ 全新 `AppInstallWatcher`：跟随页面可见性启停，避免隐藏页或销毁后接收器泄漏<br>
+      ✅ release 正式签名（CN=DiPlay）<br>
+      ✅ 基于 v2.0.4 基线（导航投仪表盘 · 死代码清理）<br><br>
       <b>功能：</b><br>
       ✅ 无线 CarPlay 投屏<br>
       ✅ 应用列表短按直接打开<br>
@@ -59,6 +58,8 @@
       ✅ NDK 下沉（mDNS / audio）
     </div>
 
+    <div class="hint" style="margin-top:8px">上一版测试包 v2.0.4-beta（导航投仪表盘 · 死代码清理）：</div>
+    <a class="btn2" href="downloads/75Play-v2.0.4-beta-导航投仪表盘.apk" download>v2.0.4-beta（导航投仪表盘）</a>
     <div class="hint" style="margin-top:8px">上一版测试包 v2.0.3-beta（静音修复）：</div>
     <a class="btn2" href="downloads/75Play-v2.0.3-beta-mutefix.apk" download>v2.0.3-beta mutefix（静音修复）</a>
     <div class="hint" style="margin-top:8px">上一版 release 正式版 v2.0.1：</div>
