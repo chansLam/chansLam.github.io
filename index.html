@@ -59,7 +59,7 @@
       ✅ NDK 下沉（mDNS / audio）
     </div>
 
-    <div class="hint" style="margin-top:8px">最新测试包 v2.0.5（有线 USB CarPlay · 修复「无法连接」：补全 usb_host_compat / legacy_ncm_claim 原生库（API19 机头可切至 CarPlay 配置 6）+ keep LwipNcmNative.onTxFrame 回调 + 移植 Issue#75 reclaimDataInterface（重建 NCM 数据管道）+ 启用 videoInCar（协商 CarPlay 视频屏幕镜像）+ 全量注册 AirPlay 动态端口到 lwip（TCP：event/屏幕流/数据隧道/视频设置；UDP：音频流/NTP 时钟/keepAlive，修复 iPhone 连媒体端口 stale→peer EOF）· 校验 sha256：<code>62093f5f9f53d932ac00abf5fce3fda9e9309f1c0e660fc5aef91295352aac74</code>：</div>
+    <div class="hint" style="margin-top:8px">最新测试包 v2.0.5（有线 USB CarPlay · 修复「无法连接」：补全 usb_host_compat / legacy_ncm_claim 原生库（API19 机头可切至 CarPlay 配置 6）+ keep LwipNcmNative.onTxFrame 回调 + 移植 Issue#75 reclaimDataInterface（重建 NCM 数据管道）+ 启用 videoInCar（协商 CarPlay 视频屏幕镜像）+ 全量注册 AirPlay 动态端口到 lwip（TCP：event/屏幕流/数据隧道/视频设置；UDP：音频流/NTP 时钟/keepAlive，修复 iPhone 连媒体端口 stale→peer EOF）+ 修复温度栏进入应用后取不到室外/车内/设定温度（逆向机头 SystemUI/CoagentService 官方 AIDL：服务名/事务号/seat 映射全对，改按 AirConditionInfo 精确字段布局直读快照）· 校验 sha256：<code>dea4bc33eab008797a9425d9e6bb91b18b8e39179b0a7abdae648b34af5d261f</code>：</div>
     <a class="btn2" href="downloads/75Play-v2.0.5-beta-有线CarPlay.apk" download>v2.0.5 · 有线 USB CarPlay</a>
     <div class="hint" style="margin-top:8px">上一版测试包 v2.0.5-beta（USB 主机探针 · 有线 CarPlay 可行性诊断）：</div>
     <a class="btn2" href="downloads/75Play-v2.0.5-beta-USB主机探针.apk" download>v2.0.5-beta · USB 主机探针</a>
