@@ -59,8 +59,8 @@
       ✅ NDK 下沉（mDNS / audio）
     </div>
 
-    <div class="hint" style="margin-top:8px">最新测试包 v2.0.5-beta（本地构建签名 · 有线：打开数据路径前先发 Apple 0x52 切到纯 CDC-NCM 模式(3)，修正设备停在模式 6、OUT 端点 halt、视频不下发的问题；切换后复用现有重新枚举流程）。校验 sha256：<code>eba0d569640f84094d7d63c094d59742bccf27a06eeb5eec2a16e4977b5fb979</code></div>
-    <a class="btn2" href="downloads/75Play-v2.0.5-beta-ncm-setmode.apk" download>v2.0.5-beta · 0x52 切 NCM 模式</a>
+    <div class="hint" style="margin-top:8px">最新测试包 v2.0.5-beta（本地构建签名 · 有线三阶段合一：① 极简控制面，只发 GET_NTB_PARAMETERS 再切 alt=1、不发那批 SET（对齐 CherryUSB）；② 数据面改 USBDEVFS_BULK 同步阻塞 bulk OUT，一次一个、返回真实 errno（对齐 LIVI），替代不完成的异步 URB ring；③ 仅在 EPIPE 时 clear-halt + alt bounce 条件恢复，最多 2 次；interrupt 每条 NetworkConnection 都记录）。校验 sha256：<code>7e3af16946fb587e651c9c03ff6480e877dad39a8848d26dcd4a5d9ede63af8a</code></div>
+    <a class="btn2" href="downloads/75Play-v2.0.5-beta-ncm-sync-bulk.apk" download>v2.0.5-beta · 同步 bulk 数据面</a>
 
     <a class="btn2" href="launcherWT.html" style="border-color:#00b0ff;color:#69f0ff;margin-top:12px">长安车机原生桌面 LauncherWT · 备份下载</a>
     <a class="btn2" href="upload.html" style="border-color:#2e5fd0;color:#6ea8ff;">上传诊断日志 · 车机浏览器用</a>
