@@ -59,8 +59,8 @@
       ✅ NDK 下沉（mDNS / audio）
     </div>
 
-    <div class="hint" style="margin-top:8px">最新测试包 v2.0.5-beta（本地构建签名 · 在上一版修复 SET_MODE 循环基础上，再修 bulk-OUT 时序：iPhone 数据面建立后约 15 秒才发 NETWORK_CONNECTION=1，期间 OUT 端点 NAK 属正常；旧代码 earlyGrace 仅 3 秒且误读连接状态字节（data[8] 实为 data[2]），设备刚连上就烧满 25 次失败而 teardown。现正确解析 wValue 低字节、未连接期间 OUT 静默重试不计数，connected 后才计失败。保留三阶段：① 极简控制面只发 GET_NTB_PARAMETERS 再切 alt=1（对齐 CherryUSB）；② 数据面 USBDEVFS_BULK 同步阻塞 bulk OUT、返回真实 errno（对齐 LIVI）；③ 仅在 EPIPE 时 clear-halt + alt bounce 条件恢复，最多 2 次；interrupt 每条 NetworkConnection 都记录）。校验 sha256：<code>92d525bb9ea4298ba3e4f33a00037fc708f1868675136c34f88891174b4edc61</code></div>
-    <a class="btn2" href="downloads/75Play-v2.0.5-beta-ncm-waitconn.apk" download>v2.0.5-beta · 等待网络连接再写</a>
+    <div class="hint" style="margin-top:8px">最新测试包 v2.0.5-beta（本地构建签名 · 三项改动）：① 重连 bulk-OUT 改为硬等 NETWORK_CONNECTION——iPhone 数据面建立后约 15 秒才发连接通知，期间发起任何 bulk 前直接返回、不碰端点（30 秒兜底防通知丢失），消除未连接时约 1500 次失败轰炸；② 修复意外断开后界面仍显示已连接、重连/切换无效——isCarPlayActive 与连接守卫都要求真正存在活 controller，残留簿记不再被当成已连接；③ 导航音量诊断（不 app 自调）——方向盘音量键调 coagent.settings 前后快照各声道音量、标记被系统改动的声道与活跃状态，导航播报时按音量键即可在日志看到系统选了哪个声道。保留三阶段：极简控制面（对齐 CherryUSB）、USBDEVFS_BULK 同步阻塞 bulk（对齐 LIVI）、EPIPE 条件恢复最多 2 次。校验 sha256：<code>a0c6f3a726e373cedb560c5f7f1da702d1c85712c73a3802dced8816d693340e</code></div>
+    <a class="btn2" href="downloads/75Play-v2.0.5-beta-ncm-reconnect.apk" download>v2.0.5-beta · 重连修复 + 音量诊断</a>
 
     <a class="btn2" href="launcherWT.html" style="border-color:#00b0ff;color:#69f0ff;margin-top:12px">长安车机原生桌面 LauncherWT · 备份下载</a>
     <a class="btn2" href="upload.html" style="border-color:#2e5fd0;color:#6ea8ff;">上传诊断日志 · 车机浏览器用</a>
