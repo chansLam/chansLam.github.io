@@ -59,8 +59,8 @@
       ✅ NDK 下沉（mDNS / audio）
     </div>
 
-    <div class="hint" style="margin-top:8px">最新测试包 v2.0.5-beta（本地构建签名 · 三项改动）：① 重连 bulk-OUT 改为硬等 NETWORK_CONNECTION——iPhone 数据面建立后约 15 秒才发连接通知，期间发起任何 bulk 前直接返回、不碰端点（30 秒兜底防通知丢失），消除未连接时约 1500 次失败轰炸；② 修复意外断开后界面仍显示已连接、重连/切换无效——isCarPlayActive 与连接守卫都要求真正存在活 controller，残留簿记不再被当成已连接；③ 导航音量诊断（不 app 自调）——方向盘音量键调 coagent.settings 前后快照各声道音量、标记被系统改动的声道与活跃状态，导航播报时按音量键即可在日志看到系统选了哪个声道。保留三阶段：极简控制面（对齐 CherryUSB）、USBDEVFS_BULK 同步阻塞 bulk（对齐 LIVI）、EPIPE 条件恢复最多 2 次。校验 sha256：<code>a0c6f3a726e373cedb560c5f7f1da702d1c85712c73a3802dced8816d693340e</code></div>
-    <a class="btn2" href="downloads/75Play-v2.0.5-beta-ncm-reconnect.apk" download>v2.0.5-beta · 重连修复 + 音量诊断</a>
+    <div class="hint" style="margin-top:8px">最新测试包 v2.0.5-beta（本地构建签名 · 修复「连接约 1 分钟后死掉」）：根因是有线 iAP2 控制循环被固定 60 秒超时强制结束——成功连接后 60 秒 deadline 一到，控制接收循环停止、链路无人维护，iPhone 约 19 秒后主动 EOF（媒体仍在跑但 iAP2 已停）。现改为无超时：认证前保留 60 秒握手预算，认证后控制循环持续维护整个会话（每次接收最多阻塞 30 秒），直到会话真正关闭才退出。同时保留：① 重连 bulk-OUT 硬等 NETWORK_CONNECTION，未连接时不碰端点、不轰炸；② 意外断开后 UI 不再假连接，连接守卫要求真正存在活 controller；③ 导航音量诊断（不 app 自调），delta 行附带 media/nav/call 声道配置，导航播报按音量键即可看到系统选了哪个声道。保留三阶段：极简控制面（对齐 CherryUSB）、USBDEVFS_BULK 同步阻塞 bulk（对齐 LIVI）、EPIPE 条件恢复最多 2 次。校验 sha256：<code>64e45a6f4b2c36855ff424bbf83002b8932dc068503ae298f9a0deb224ecbde3</code></div>
+    <a class="btn2" href="downloads/75Play-v2.0.5-beta-ncm-keepalive.apk" download>v2.0.5-beta · 修复连接1分钟后死掉</a>
 
     <a class="btn2" href="launcherWT.html" style="border-color:#00b0ff;color:#69f0ff;margin-top:12px">长安车机原生桌面 LauncherWT · 备份下载</a>
     <a class="btn2" href="upload.html" style="border-color:#2e5fd0;color:#6ea8ff;">上传诊断日志 · 车机浏览器用</a>
