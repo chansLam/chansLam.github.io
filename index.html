@@ -59,8 +59,8 @@
       ✅ NDK 下沉（mDNS / audio）
     </div>
 
-    <div class="hint" style="margin-top:8px">最新测试包 v2.0.5-beta（本地构建签名 · 有线三阶段合一：① 极简控制面，只发 GET_NTB_PARAMETERS 再切 alt=1、不发那批 SET（对齐 CherryUSB）；② 数据面改 USBDEVFS_BULK 同步阻塞 bulk OUT，一次一个、返回真实 errno（对齐 LIVI），替代不完成的异步 URB ring；③ 仅在 EPIPE 时 clear-halt + alt bounce 条件恢复，最多 2 次；interrupt 每条 NetworkConnection 都记录）。校验 sha256：<code>7e3af16946fb587e651c9c03ff6480e877dad39a8848d26dcd4a5d9ede63af8a</code></div>
-    <a class="btn2" href="downloads/75Play-v2.0.5-beta-ncm-sync-bulk.apk" download>v2.0.5-beta · 同步 bulk 数据面</a>
+    <div class="hint" style="margin-top:8px">最新测试包 v2.0.5-beta（本地构建签名 · 修复 SET_MODE 无限循环：GET_MODE 首字节只是初始/非初始标志（3 初始、5 非初始），不是模式号；6 配置设备本就在 mode 4（USB Ethernet + CDC-NCM），配置就绪即直接打开数据面、不再发 SET_MODE，结构上不会再循环。在此基础上保留三阶段：① 极简控制面，只发 GET_NTB_PARAMETERS 再切 alt=1（对齐 CherryUSB）；② 数据面 USBDEVFS_BULK 同步阻塞 bulk OUT、返回真实 errno（对齐 LIVI）；③ 仅在 EPIPE 时 clear-halt + alt bounce 条件恢复，最多 2 次；interrupt 每条 NetworkConnection 都记录）。校验 sha256：<code>f370fc20d0e375cb152b59686a14d5133571461a34cb528fc5d3f7199ae924a7</code></div>
+    <a class="btn2" href="downloads/75Play-v2.0.5-beta-ncm-fixloop.apk" download>v2.0.5-beta · 修复 SET_MODE 循环</a>
 
     <a class="btn2" href="launcherWT.html" style="border-color:#00b0ff;color:#69f0ff;margin-top:12px">长安车机原生桌面 LauncherWT · 备份下载</a>
     <a class="btn2" href="upload.html" style="border-color:#2e5fd0;color:#6ea8ff;">上传诊断日志 · 车机浏览器用</a>
