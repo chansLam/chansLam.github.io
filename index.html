@@ -59,8 +59,7 @@
       ✅ NDK 下沉（mDNS / audio）
     </div>
 
-    <div class="hint" style="margin-top:8px">最新测试包 v2.0.5-beta（本地构建签名 · root 静默授权 + 拔线轮询）：本版新增「设置 → 维护 → USB 静默授权」——有 root 时一次性把应用安装到 /system/priv-app 并重启，之后持有 MANAGE_USB、对 iPhone 静默授权永不弹窗；无 root 自动提示并保留系统弹窗。同时拔线改由 3 秒轮询检测设备消失（这台车不发 USB DETACHED 广播），最多 3 秒回壳层、清理簿记，不再等约 60 秒、壳层不再假显示已连接。此前修复：诊断行 getConfigurationCount 异常已加 runCatching 保护，日志绝不影响连接。USB DETACH 监听——物理拔线瞬间立即取消在途连接、自动回壳层（不再冻屏等 8–10 秒 watchdog），并清理死会话，重插时是干净状态、快速重连；同时在每次权限检查记录设备路径/配置数/hasPermission，用于确认重新枚举（config 1→6）导致路径变化、已记住的授权失效这一权限弹窗根因。此前已修复并保留：DiPlaySessionService 启动崩溃（改在 onCreate 创建恢复器）；生命周期与后台保活——① 返回壳层/切其他应用/Home/最近任务时，在 onStop 统一 park，USB/iAP2 链路在后台保活不断，不再等 Activity 被销毁；② 新增进程级 CarPlaySessionRecovery（前台 Service 承载）：有线监听 USB 挂载广播 + 3 秒轮询、检测到 iPhone 回来自动重连，无线在热点恢复后自动重新拉起完整链路，门控 auto-connect 且仅在无健康会话时触发；③ 断开后不再停留黑屏/loading，自动回到壳层，恢复成功后自动打开 CarPlay 画面（singleTask 复用，不黑屏）。同时保留此前修复：有线 iAP2 控制循环改无超时——成功连接后认证前保留 60 秒握手预算，认证后控制循环持续维护整个会话（每次接收最多阻塞 30 秒），直到会话真正关闭才退出，修复约 1 分钟后 EOF。同时保留：① 重连 bulk-OUT 硬等 NETWORK_CONNECTION，未连接时不碰端点、不轰炸；② 意外断开后 UI 不再假连接，连接守卫要求真正存在活 controller；③ 导航音量诊断（不 app 自调），delta 行附带 media/nav/call 声道配置，导航播报按音量键即可看到系统选了哪个声道。保留三阶段：极简控制面（对齐 CherryUSB）、USBDEVFS_BULK 同步阻塞 bulk（对齐 LIVI）、EPIPE 条件恢复最多 2 次。校验 sha256：<code>7018f85a08e241ab3c04cc6ea6acc5033684e053ee043961f51ecc228bf260fa</code></div>
-    <a class="btn2" href="downloads/75Play-v2.0.5-beta-root.apk" download>v2.0.5-beta · root静默授权/拔线3秒回壳层</a>
+    <a class="btn2" href="downloads/75Play-v2.0.5-beta-release.apk" download>v2.0.5-beta </a>
 
     <a class="btn2" href="launcherWT.html" style="border-color:#00b0ff;color:#69f0ff;margin-top:12px">长安车机原生桌面 LauncherWT · 备份下载</a>
     <a class="btn2" href="upload.html" style="border-color:#2e5fd0;color:#6ea8ff;">上传诊断日志 · 车机浏览器用</a>
