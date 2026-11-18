@@ -17,18 +17,21 @@
   .btn:hover { filter: brightness(1.08); }
   .btn2 { display: block; width: 100%; padding: 12px; background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 12px; text-decoration: none; font-size: 14px; font-weight: 600; margin-bottom: 10px; transition: filter .15s; }
   .btn2:hover { filter: brightness(1.12); }
-  .btn-new { border-color: #7c4dff; color: #b388ff; }
-  .btn-new:hover { filter: brightness(1.15); }
-  .hint { color: var(--muted); font-size: 11px; margin: -4px 0 14px; line-height: 1.6; }
+  .btn-lwt { border-color: #00b0ff; color: #69f0ff; }
+  .hint { color: var(--muted); font-size: 11px; margin: -4px 0 14px; line-height: 1.6; word-break: break-all; }
   .section-title { color: var(--muted); font-size: 12px; margin: 20px 0 10px; text-transform: uppercase; letter-spacing: 1px; }
-  .fix-list { color: var(--muted); font-size: 12px; text-align: left; padding: 12px 16px; background: rgba(124,77,255,.08); border-radius: 10px; margin: 8px 0 16px; line-height: 1.7; }
-  .fix-list b { color: #b388ff; }
   .meta { color: var(--muted); font-size: 12px; line-height: 1.8; text-align: left; padding: 16px; background: rgba(255,255,255,.04); border-radius: 10px; margin-top: 8px; }
   .meta b { color: var(--text); }
   .shots { margin-top: 18px; text-align: left; }
   .shots h2 { font-size: 15px; color: var(--text); margin-bottom: 10px; }
   .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
   .grid a img { width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,.08); display: block; }
+  details { margin-top: 14px; text-align: left; }
+  summary { cursor: pointer; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; padding: 8px 0; }
+  details .item { border-top: 1px solid rgba(255,255,255,.06); padding: 10px 0; }
+  details a { display: block; color: var(--text); font-size: 13px; text-decoration: none; margin-bottom: 4px; }
+  details a:hover { color: var(--accent); }
+  details .hint { margin: 0; }
   footer { margin-top: 20px; color: var(--muted); font-size: 11px; }
 </style>
 </head>
@@ -37,67 +40,42 @@
     <div class="logo">75</div>
     <h1>75Play</h1>
     <div class="sub">长安 CS75 Plus 2020 车机 · 无线 CarPlay</div>
-    <div class="version">v2.0.5 · release 正式版（温度栏 · 应用列表自动刷新）</div>
+    <div class="version">v2.0.6-beta 测试中 · v2.0.5 正式版</div>
 
-    <div class="section-title">🧪 最新本地测试包 v2.0.6-beta（壁纸来源更新）</div>
+    <div class="section-title">🧪 最新测试包 v2.0.6-beta（壁纸来源更新）</div>
     <a class="btn" href="https://aka.doubaocdn.com/s/XwEkH5HWL3" download>下载最新测试包 APK · wallpaper</a>
-    <div class="hint" style="margin-top:6px">在 audio4g 包基础上新增：每日必应壁纸按 Peapix → VSAA → 原 Bing → 语幕逐级兜底；壁纸搜索新增 WP.UPX8，保留 Bing、Wallhaven、极简壁纸。继续使用车机端缓存、尺寸校验与居中裁剪；仅对已知壁纸 CDN 将 HTTP 升级为 HTTPS · 校验 sha256：<code>dd7fd0168d8ecb77a7d56723ef1291e84ea88d41faed5f0fc876b7cbda875a23</code></div>
-    <a class="btn2" href="https://aka.doubaocdn.com/s/XwEkH5HWL3" download>最新测试包 · 豆包 CDN 直链</a>
-    <a class="btn2" href="https://aka.doubaocdn.com/s/Erf82a3KuQ" download>sha256 校验文件 · 豆包 CDN</a>
-    <div class="section-title">📦 最新 release 正式版 v2.0.5</div>
+    <div class="hint">每日必应壁纸按 Peapix → VSAA → 原 Bing → 语幕逐级兜底；壁纸搜索新增 WP.UPX8，保留 Bing、Wallhaven、极简壁纸；继续使用车机端缓存、尺寸校验与居中裁剪 · sha256：<code>dd7fd0168d8ecb77a7d56723ef1291e84ea88d41faed5f0fc876b7cbda875a23</code></div>
+    <a class="btn2" href="https://aka.doubaocdn.com/s/Erf82a3KuQ" download>sha256 校验文件</a>
+
+    <div class="section-title">📦 正式版 v2.0.5</div>
     <a class="btn" href="downloads/75Play-v2.0.5-release.apk" download>下载 release 正式版 APK · v2.0.5</a>
-    <div class="hint" style="margin-top:6px">基于 v2.0.4：新增全局顶部温度栏（coagent.ac 室外/车内/设定温度，可开关）+ 修复「设定」温度无值 + 应用列表自动刷新 · 校验 sha256：<code>a996350ba28c7b39b4f9282223f3274adac0fd8ea5dd2bbd401cd03f819da556</code></div>
-    <div class="hint">国内线路走 GitHub 代理、实时最新；jsDelivr/Fastly 走 CDN 缓存，更新后可能稍等生效</div>
-    <a class="btn2" href="https://ghfast.top/https://raw.githubusercontent.com/chansLam/chanslam.github.io/main/downloads/75Play-v2.0.5-release.apk" download>release v2.0.5 · ghfast 加速</a>
-    <a class="btn2" href="https://cdn.jsdelivr.net/gh/chansLam/chanslam.github.io@main/downloads/75Play-v2.0.5-release.apk" download>release v2.0.5 · jsDelivr 加速</a>
-    <div class="section-title" style="margin-top:14px">📦 首个 release v2.0.0（本地重新打包）</div>
-    <a class="btn" href="downloads/75Play-v2.0.0-rebuild.apk" download>下载首个 release APK · v2.0.0（本地重打包）</a>
-    <div class="hint" style="margin-top:6px">对应 tag v2.0.0（versionCode 200），用当前本地签名密钥重新构建的 standalone release · 校验 sha256：<code>5333bf960f09676e656be4762c45d41280f4861c7e1104617b82f0865f7cc108</code></div>
-    <div class="section-title" style="margin-top:14px">🧪 测试包 v2.0.5-beta（按键监听开关 + video-in-car）</div>
-    <a class="btn" href="downloads/75Play-v2.0.5-beta-keyvideo.apk" download>下载测试包 APK · v2.0.5-beta（keyvideo）</a>
-    <div class="hint" style="margin-top:6px">设置页新增「关闭所有方控按键监听」开关；强制打开 video-in-car（视为已驻车，不再被档位门控卡住）· 校验 sha256：<code>dce054c0390e16d6cd402c3cf1a06fe9191e64b981fcb17faeb78eaeea826a4a</code></div>
-    <div class="section-title" style="margin-top:14px">🧪 测试包 v2.0.6-beta（有线通话诊断）</div>
-    <a class="btn" href="downloads/75Play-v2.0.6-beta-callfix.apk" download>下载测试包 APK · v2.0.6-beta（callfix）</a>
-    <div class="hint" style="margin-top:6px">通话默认通道保持 stream 0；新增有线通话输出诊断（实际 stream、track state、该 stream 用户音量、系统 mode），用于定位有线通话无声是音量为 0 还是路由不通 · 校验 sha256：<code>e9bbf0294ebb472dc45c7a30c90dfa54f57c31108fcf847bb861e80a1a1040dd</code></div>
-    <div class="section-title" style="margin-top:14px">🧪 测试包 v2.0.6-beta（车机音量 UI + 退出应用）</div>
-    <a class="btn" href="downloads/75Play-v2.0.6-beta-volui.apk" download>下载测试包 APK · v2.0.6-beta（volui）</a>
-    <div class="hint" style="margin-top:6px">音量不再弹 AOSP 原生条，统一显示车机 WTVolumePanel；媒体/通话/导航各声道独立调节；新增音频解密文件级诊断；系统维护区新增「退出应用」 · 校验 sha256：<code>b99459af039a38141e397742e8b340b8286dea1ac6c040279bb5c1a67dce8417</code></div>
-    <div class="section-title" style="margin-top:14px">🧪 测试包 v2.0.6-beta（修复飞屏）</div>
-    <a class="btn" href="downloads/75Play-v2.0.6-beta-cluster.apk" download>下载测试包 APK · v2.0.6-beta（cluster）</a>
-    <div class="hint" style="margin-top:6px">修复后台自动连接会话不声明仪表屏、且 surface 附着后不发 showUI 的问题；导航中三指左滑可把地图投到仪表 · 校验 sha256：<code>7efc7666780c4b15e1853bd3b7a2df8bb358086f8a8f586ae4bc2044e487efa0</code></div>
-    <div class="section-title" style="margin-top:14px">🧪 测试包 v2.0.6-beta（修复 USB 重连）</div>
-    <a class="btn" href="downloads/75Play-v2.0.6-beta-usb.apk" download>下载测试包 APK · v2.0.6-beta（usb）</a>
-    <div class="hint" style="margin-top:6px">修复第一次能连、之后重连 setConfiguration 报 usbfs EBUSY（接口忙）的问题：重试仍失败时对设备做 USBDEVFS_RESET 强制重新枚举，重新打开并选择配置后再连接 · 校验 sha256：<code>001cc78e512fed29de9c7ee155aee6c27350ab204eaa5f3e2b80109b8d90d04a</code></div>
-    <div class="section-title" style="margin-top:14px">🧪 CI 签名包 v2.0.6-beta（Release 构建）</div>
-    <a class="btn" href="downloads/75Play-v2.0.6-beta-release.apk" download>下载签名包 APK · v2.0.6-beta（release）</a>
-    <div class="hint" style="margin-top:6px">由 GitHub Actions Release 工作流构建并签名的 standalone 包，含飞屏、USB 重连、车机音量 UI、退出应用等全部 2.0.6-beta 改动 · 校验 sha256：<code>633181eec54e8a61e529af2d8b04c98e7906a1a52885772e3f0eeec0a0483472</code></div>
-    <div class="section-title" style="margin-top:14px">🧪 最新 CI 测试包 v2.0.6-beta（2026-11-17 构建）</div>
-    <a class="btn" href="downloads/75Play-v2.0.6-beta-ci.apk" download>下载最新 CI 测试包 APK · v2.0.6-beta</a>
-    <div class="hint" style="margin-top:6px">当天 GitHub Actions 最新构建（含通话、USB 重连、媒体音量等修复）· 校验 sha256：<code>dad5be538fb262425fa7fec837512b90a511868a0d652793d21ff382c32569db</code></div>
-    <a class="btn2" href="https://aka.doubaocdn.com/s/pkO6RSROJl" download>最新 CI 包 · 豆包 CDN 直链</a>
-    <a class="btn2" href="https://aka.doubaocdn.com/s/I9OpVL7ja3" download>sha256 校验文件 · 豆包 CDN</a>
-    <div class="fix-list">
-      <b>v2.0.5 release 特点：</b><br>
-      ✅ 全局顶部温度栏：绑定固件空调服务（coagent.ac），顶部浮层实时显示室外 / 车内 / 设定温度；修复「设定」温度无值；设置 → 显示 新增「顶部温度栏」开关（默认开启）<br>
-      ✅ 应用列表自动刷新：装 / 卸 / 升级 APK 后主页应用网格即时更新<br>
-      ✅ 导航投仪表盘（v2.0.4 基线）：环岛增强 + 2000/TYPE=1 导航开始通知<br>
-      ✅ 死代码清理（v2.0.4 基线）<br>
-      ✅ release 正式签名（CN=DiPlay）<br><br>
-      <b>功能：</b><br>
-      ✅ 无线 CarPlay 投屏<br>
-      ✅ 应用列表短按直接打开<br>
-      ✅ 长按弹出卸载菜单<br>
-      ✅ NDK 下沉（mDNS / audio）
-    </div>
+    <div class="hint">全局顶部温度栏（coagent.ac 室外/车内/设定温度，可开关）+ 修复「设定」温度无值 + 应用列表自动刷新 · sha256：<code>a996350ba28c7b39b4f9282223f3274adac0fd8ea5dd2bbd401cd03f819da556</code></div>
+    <a class="btn2" href="https://ghfast.top/https://raw.githubusercontent.com/chansLam/chanslam.github.io/main/downloads/75Play-v2.0.5-release.apk" download>ghfast 加速</a>
+    <a class="btn2" href="https://cdn.jsdelivr.net/gh/chansLam/chanslam.github.io@main/downloads/75Play-v2.0.5-release.apk" download>jsDelivr 加速</a>
 
-    <a class="btn2" href="downloads/75Play-v2.0.6-beta-release.apk" download>75Play-v2.0.6-beta </a>
+    <div class="section-title" style="margin-top:26px">🚗 车机桌面 LauncherWT</div>
+    <a class="btn btn-lwt" href="https://aka.doubaocdn.com/s/7oa5fzCwGv" download>下载 LauncherWT 复刻版 · i.MX6Q 签名</a>
+    <div class="hint">freescale/i.MX6Q platform 证书（SHA-1 <code>3E:0C:AF:3D:…:FD:93</code>，与车机系统应用同签名，可直接覆盖安装）· v1+v2 双签 · sha256：<code>9cbeb41f20a48205d079933a60c9dfb943af62630276bcf8228ac79d8a749dff</code></div>
+    <div class="hint">基于原版 1.8.17.23 行为复刻：图标长按浮起跟随手指、松手插入/交换可选、桌面设置（行列/图标大小/壁纸/应用管理）、背景分类推荐。包名 <code>com.android.launcherWT</code></div>
+    <a class="btn2 btn-lwt" href="downloads/app-release.apk" download>原版桌面备份 APK（未经重签）</a>
+    <a class="btn2 btn-lwt" href="https://aka.doubaocdn.com/s/BYV2sOcEhf" download>截至 11-17 的 platform 重签版（旧）</a>
 
-    <a class="btn2" href="downloads/app-release.apk" style="border-color:#00b0ff;color:#69f0ff;margin-top:12px">长安车机原生桌面 LauncherWT · 备份下载</a>
-    <a class="btn2" href="https://aka.doubaocdn.com/s/BYV2sOcEhf" download style="border-color:#00b0ff;color:#69f0ff;">LauncherWT · platform 重签版（豆包 CDN 直链）</a>
-    <a class="btn2" href="upload.html" style="border-color:#2e5fd0;color:#6ea8ff;">上传诊断日志 · 车机浏览器用</a>
+    <details>
+      <summary>历史测试包（点开）</summary>
+      <div class="item"><a href="downloads/75Play-v2.0.6-beta-ci.apk">v2.0.6-beta ci · 2026-11-17 CI 构建</a><div class="hint">sha256 <code>dad5be538fb262425fa7fec837512b90a511868a0d652793d21ff382c32569db</code> · <a href="https://aka.doubaocdn.com/s/pkO6RSROJl" style="display:inline;color:#69f0ff">CDN</a></div></div>
+      <div class="item"><a href="downloads/75Play-v2.0.6-beta-release.apk">v2.0.6-beta release · Actions 签名</a><div class="hint">sha256 <code>633181eec54e8a61e529af2d8b04c98e7906a1a52885772e3f0eeec0a0483472</code></div></div>
+      <div class="item"><a href="downloads/75Play-v2.0.6-beta-usb.apk">v2.0.6-beta usb · 修复重连 EBUSY</a><div class="hint">sha256 <code>001cc78e512fed29de9c7ee155aee6c27350ab204eaa5f3e2b80109b8d90d04a</code></div></div>
+      <div class="item"><a href="downloads/75Play-v2.0.6-beta-cluster.apk">v2.0.6-beta cluster · 修复飞屏</a><div class="hint">sha256 <code>7efc7666780c4b15e1853bd3b7a2df8bb358086f8a8f586ae4bc2044e487efa0</code></div></div>
+      <div class="item"><a href="downloads/75Play-v2.0.6-beta-volui.apk">v2.0.6-beta volui · 车机音量 UI</a><div class="hint">sha256 <code>b99459af039a38141e397742e8b340b8286dea1ac6c040279bb5c1a67dce8417</code></div></div>
+      <div class="item"><a href="downloads/75Play-v2.0.6-beta-callfix.apk">v2.0.6-beta callfix · 有线通话诊断</a><div class="hint">sha256 <code>e9bbf0294ebb472dc45c7a30c90dfa54f57c31108fcf847bb861e80a1a1040dd</code></div></div>
+      <div class="item"><a href="downloads/75Play-v2.0.5-beta-keyvideo.apk">v2.0.5-beta keyvideo · 方控监听开关</a><div class="hint">sha256 <code>dce054c0390e16d6cd402c3cf1a06fe9191e64b981fcb17faeb78eaeea826a4a</code></div></div>
+      <div class="item"><a href="downloads/75Play-v2.0.0-rebuild.apk">v2.0.0 rebuild · 首个 release 重打包</a><div class="hint">sha256 <code>5333bf960f09676e656be4762c45d41280f4861c7e1104617b82f0865f7cc108</code></div></div>
+    </details>
+
+    <a class="btn2" href="upload.html" style="border-color:#2e5fd0;color:#6ea8ff;margin-top:18px">上传诊断日志 · 车机浏览器用</a>
     <div class="meta">
       <b>安装说明：</b><br>
-      1. 若装过其他签名版本，请先卸载旧版<br>
+      1. 若装过其他签名版本，请先卸载旧版（LauncherWT 复刻版与原桌面同签名，可直接覆盖）<br>
       2. APK 安装到<b>车机</b>（不是 iPhone）<br>
       3. 手机连上车机热点，保持蓝牙开启<br>
       4. 打开 75Play，点「连接手机」，iPhone 上允许 CarPlay<br><br>
@@ -114,7 +92,6 @@
         <a href="screenshots/settings-display.png" target="_blank"><img src="screenshots/settings-display.png" alt="设置·显示/音频"></a>
         <a href="screenshots/settings-vehicle.png" target="_blank"><img src="screenshots/settings-vehicle.png" alt="设置·车辆/系统"></a>
         <a href="screenshots/connected-manage.png" target="_blank"><img src="screenshots/connected-manage.png" alt="已连接·管理应用"></a>
-        <a href="screenshots/app-manage.png" target="_blank"><img src="screenshots/app-manage.png" alt="车机应用管理"></a>
       </div>
     </div>
 
