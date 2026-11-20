@@ -3,77 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>75Play · 下载</title>
+<title>Chans · 长安 CS75 PLUS 车机工具</title>
 <style>
-  :root { --accent: #00c853; --accent-2: #69f0ae; --bg: #0f1115; --card: #161a20; --text: #e6e8eb; --muted: #9aa0a6; }
+  :root {
+    --bg: #0f1115; --card: #161a20; --line: rgba(255,255,255,.07);
+    --text: #e6e8eb; --muted: #9aa0a6;
+    --green: #00c853; --green-2: #69f0ae;
+    --blue: #00b0ff; --blue-2: #69d8ff;
+  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
-  .card { background: var(--card); border-radius: 16px; padding: 40px 32px; max-width: 420px; width: 100%; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.06); }
-  .logo { width: 72px; height: 72px; border-radius: 18px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 800; margin: 0 auto 20px; color: #06210f; }
-  h1 { font-size: 24px; margin-bottom: 6px; }
-  .sub { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
-  .version { display: inline-block; background: rgba(0,200,83,.12); color: var(--accent); border-radius: 999px; padding: 4px 14px; font-size: 13px; font-weight: 600; margin-bottom: 28px; }
-  .btn { display: block; width: 100%; padding: 14px; background: var(--accent); color: #06210f; border-radius: 12px; text-decoration: none; font-size: 16px; font-weight: 700; margin-bottom: 12px; transition: filter .15s; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+         min-height: 100vh; padding: 40px 20px 56px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+  .head { text-align: center; margin-bottom: 4px; }
+  .head h1 { font-size: 22px; letter-spacing: .5px; }
+  .head p { color: var(--muted); font-size: 13px; margin-top: 8px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 26px 24px;
+          width: 100%; max-width: 520px; box-shadow: 0 8px 32px rgba(0,0,0,.35); }
+  .row { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
+  .logo { flex: none; width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+          font-size: 19px; font-weight: 800; }
+  .logo.g { background: linear-gradient(135deg, var(--green), var(--green-2)); color: #06210f; }
+  .logo.b { background: linear-gradient(135deg, #0077ff, var(--blue-2)); color: #041a2b; }
+  .name { font-size: 18px; font-weight: 700; }
+  .tag { color: var(--muted); font-size: 12px; margin-top: 3px; line-height: 1.5; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 18px; }
+  .chip { border-radius: 999px; padding: 4px 11px; font-size: 12px; font-weight: 600;
+          background: rgba(255,255,255,.05); color: var(--muted); border: 1px solid var(--line); }
+  .chip.g { background: rgba(0,200,83,.12); color: var(--green); border-color: rgba(0,200,83,.3); }
+  .chip.b { background: rgba(0,176,255,.12); color: var(--blue-2); border-color: rgba(0,176,255,.3); }
+  .btn { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%;
+         padding: 13px 16px; border-radius: 12px; text-decoration: none; font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+  .btn .size { font-size: 12px; font-weight: 600; opacity: .8; }
+  .btn.g { background: var(--green); color: #06210f; }
+  .btn.b { background: var(--blue); color: #041a2b; }
   .btn:hover { filter: brightness(1.08); }
-  .btn2 { display: block; width: 100%; padding: 12px; background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 12px; text-decoration: none; font-size: 14px; font-weight: 600; margin-bottom: 10px; transition: filter .15s; }
-  .btn2:hover { filter: brightness(1.12); }
-  .btn-lwt { border-color: #00b0ff; color: #69f0ff; }
-  .hint { color: var(--muted); font-size: 11px; margin: -4px 0 14px; line-height: 1.6; word-break: break-all; }
-  .section-title { color: var(--muted); font-size: 12px; margin: 20px 0 10px; text-transform: uppercase; letter-spacing: 1px; }
-  .meta { color: var(--muted); font-size: 12px; line-height: 1.8; text-align: left; padding: 16px; background: rgba(255,255,255,.04); border-radius: 10px; margin-top: 8px; }
-  .meta b { color: var(--text); }
-  .shots { margin-top: 18px; text-align: left; }
-  .shots h2 { font-size: 15px; color: var(--text); margin-bottom: 10px; }
+  .link { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%;
+          padding: 11px 16px; border-radius: 12px; text-decoration: none; font-size: 13px; font-weight: 600; margin-bottom: 8px;
+          border: 1px solid var(--line); color: var(--muted); }
+  .link:hover { border-color: rgba(255,255,255,.2); color: var(--text); }
+  .note { color: var(--muted); font-size: 12px; line-height: 1.75; margin-top: 12px; }
+  .note code { color: #c8ccd2; font-size: 11px; word-break: break-all; }
+  .note b { color: var(--text); }
+  .badge-pre { color: #ffb020 !important; border-color: rgba(255,176,32,.35) !important; background: rgba(255,176,32,.1) !important; }
+  .hint-sha { margin-top: 8px; word-break: break-all; }
+  footer { color: var(--muted); font-size: 11px; text-align: center; line-height: 1.8; max-width: 520px; }
+  .shots { width: 100%; max-width: 520px; }
+  .shots h2 { font-size: 14px; color: var(--muted); margin-bottom: 10px; font-weight: 600; }
   .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .grid a img { width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,.08); display: block; }
-  footer { margin-top: 20px; color: var(--muted); font-size: 11px; }
+  .grid a img { width: 100%; border-radius: 8px; border: 1px solid var(--line); display: block; }
 </style>
 </head>
 <body>
-  <div class="card">
-    <div class="logo">75</div>
-    <h1>75Play</h1>
-    <div class="sub">长安 CS75 Plus 2020 车机 · 无线 CarPlay</div>
-    <div class="version">v2.0.6-beta · 2026-11-19 · audio-fix</div>
 
-    <div class="section-title">🧪 今日最新测试包</div>
-    <a class="btn" href="https://aka.doubaocdn.com/s/gDf1cZl2vc" download>下载测试包 APK · audio-fix</a>
-    <div class="hint">2.0.6-beta 音频修复包（内嵌 revision <code>656f498</code>）：媒体/通话音量按车机面板 <b>0–40</b> 调节，不再被 Android 音频流的 10 档上限锁死；音量键按已设置的媒体、导航、通话声道分别调节；默认音频流转为 <b>媒体 3 / 导航 10 / 通话 5</b>；包含此前 merge 包的全部改动 · sha256：<code>7a7ce57c3629326db4189ea0f31817b8a25e141dccebc6d7cc8b78aac709b091</code></div>
-    <a class="btn2" href="https://aka.doubaocdn.com/s/oDwmW784Up" download>sha256 校验文件</a>
-    <a class="btn2" href="https://aka.doubaocdn.com/s/K7qFZBjjr4" download>上一测试包 · merge</a>
+<div class="head">
+  <h1>长安 CS75 PLUS 2020 · 车机工具</h1>
+  <p>两个独立项目 · 全部版本由 GitHub Actions 自动构建</p>
+</div>
 
-    <div class="section-title" style="margin-top:26px">🚗 车机桌面 LauncherWT · 测试包（2026-11-19 01:10）</div>
-    <a class="btn btn-lwt" href="https://aka.doubaocdn.com/s/LoGbVfGicY" download>下载 LauncherWT 测试包 · i.MX6Q 签名（v1+v2 双签）</a>
-    <div class="hint">freescale/i.MX6Q platform 证书（SHA-1 <code>3E:0C:AF:3D:…:FD:93</code>，与车机系统应用同签名，可直接覆盖安装）· sha256：<code>f2a4a6e736160f7ffd5456cc2fcb53e079f7afdb169f8b70dbc5aea09c65c801</code></div>
-    <div class="hint">本次修复：①「可添加的应用」按包名去重，已在桌面的应用不再在右侧重复出现；② 与桌面同平台证书的车厂预装应用（环视行车记录、系统日志、工程模式、升级、高德 Agent）不再自动铺到桌面，只留在手动添加列表；③ 无录像设备的车机不再出现「录像禁用」图标（按原版 <code>hasDvrDevice()</code> 自隐藏）；④ 状态区诊断加深：输出 classloader / sourceDir+flags / 全盘搜索包含 <code>com/incall/proxy</code> 类的 jar，并列出 <code>/system/framework</code> 包名，用于定位空调与信号图标不显示的原因。</div>
-    <div class="hint">基于原版 1.8.17.23 行为复刻：图标长按浮起跟随手指、松手插入 / 交换可选、桌面设置（行列 / 图标大小 / 壁纸 / 应用管理）、背景分类推荐。包名 <code>com.android.launcherWT</code></div>
-    <a class="btn2 btn-lwt" href="https://aka.doubaocdn.com/s/7t3XrWAJF2" download>sha256 校验文件 · 豆包 CDN</a>
-    <a class="btn2 btn-lwt" href="downloads/app-release.apk" download>原版桌面备份 APK（未经重签）</a>
-
-    <a class="btn2" href="upload.html" style="border-color:#2e5fd0;color:#6ea8ff;margin-top:18px">上传诊断日志 · 车机浏览器用</a>
-    <div class="meta">
-      <b>安装说明：</b><br>
-      1. 若装过其他签名版本，请先卸载旧版（LauncherWT 复刻版与原桌面同签名，可直接覆盖）<br>
-      2. APK 安装到<b>车机</b>（不是 iPhone）<br>
-      3. 手机连上车机热点，保持蓝牙开启<br>
-      4. 打开 75Play，点「连接手机」，iPhone 上允许 CarPlay<br><br>
-      <b>功能：</b>全屏沉浸 CarPlay · 悬浮小白点 · 车机应用 · 方控 / Siri · 多语言 · Root 隐藏导航栏<br>
-      <b>源码仓库：</b><a href="https://github.com/chansLam/75Play" style="color:var(--accent)">github.com/chansLam/75Play</a>
+<!-- 75Play -->
+<div class="card" id="p1">
+  <div class="row">
+    <div class="logo g">75</div>
+    <div>
+      <div class="name">75Play</div>
+      <div class="tag">无线 CarPlay 投屏 · 全屏沉浸 · 悬浮白点 · 方控 / Siri · 多语言</div>
     </div>
-
-    <div class="shots">
-      <h2>实机截图 · v2.0.0</h2>
-      <div class="grid">
-        <a href="screenshots/carplay-home.png" target="_blank"><img src="screenshots/carplay-home.png" alt="已连接 CarPlay 主页"></a>
-        <a href="screenshots/home.png" target="_blank"><img src="screenshots/home.png" alt="连接中心主页"></a>
-        <a href="screenshots/connecting.png" target="_blank"><img src="screenshots/connecting.png" alt="连接中"></a>
-        <a href="screenshots/settings-display.png" target="_blank"><img src="screenshots/settings-display.png" alt="设置·显示/音频"></a>
-        <a href="screenshots/settings-vehicle.png" target="_blank"><img src="screenshots/settings-vehicle.png" alt="设置·车辆/系统"></a>
-        <a href="screenshots/connected-manage.png" target="_blank"><img src="screenshots/connected-manage.png" alt="已连接·管理应用"></a>
-      </div>
-    </div>
-
-    <footer>独立开源项目 · 非 Apple 认证 · 与 Apple 或长安无隶属关系 · CarPlay 归 Apple Inc. 所有</footer>
   </div>
+  <div class="chips">
+    <span class="chip g" id="p1-ver">读取中…</span>
+    <span class="chip" id="p1-date">—</span>
+    <span class="chip" id="p1-pre">—</span>
+  </div>
+  <a class="btn g" id="p1-btn" href="https://github.com/chansLam/75Play/releases">下载 APK <span class="size" id="p1-size"></span></a>
+  <a class="link" id="p1-sha" href="https://github.com/chansLam/75Play/releases">sha256 校验文件</a>
+  <a class="link" href="https://github.com/chansLam/75Play">源码仓库 · chansLam/75Play</a>
+  <div class="note">
+    装到<b>车机</b>（不是 iPhone）。装过其他签名版本需先卸载。手机连车机热点、蓝牙保持开启，打开 75Play 点「连接手机」，iPhone 允许 CarPlay。
+    <div class="hint-sha"></div>
+  </div>
+</div>
+
+<!-- LauncherWT -->
+<div class="card" id="p2">
+  <div class="row">
+    <div class="logo b">WT</div>
+    <div>
+      <div class="name">LauncherWT</div>
+      <div class="tag">原版车机桌面复刻 · 长按浮起拖拽 · 桌面设置 · 壁纸源 · 状态栏对接厂商库</div>
+    </div>
+  </div>
+  <div class="chips">
+    <span class="chip b" id="p2-ver">读取中…</span>
+    <span class="chip" id="p2-date">—</span>
+    <span class="chip" id="p2-sign">i.MX6Q 平台签名</span>
+  </div>
+  <a class="btn b" id="p2-btn" href="https://github.com/chansLam/WT-Launcher/releases">下载车机包 <span class="size" id="p2-size"></span></a>
+  <a class="link" id="p2-avd" href="https://github.com/chansLam/WT-Launcher/releases">模拟器包 · avd debug 签名</a>
+  <a class="link" id="p2-sha" href="https://github.com/chansLam/WT-Launcher/releases">SHA256SUMS 校验文件</a>
+  <a class="link" href="https://github.com/chansLam/WT-Launcher">源码仓库 · chansLam/WT-Launcher</a>
+  <div class="note">
+    车机包用 freescale/i.MX6Q 平台证书签（SHA-1 <code>3E:0C:AF:3D:…:FD:93</code>），与车机系统应用同签名，可直接覆盖 <code>/system/app/WT_Launcher</code> 安装（v1+v2 双签，兼容 Android 4.4.2）。模拟器包为 debug 签名，只能装 <code>emulator-5554</code>，<b>不要装真机</b>。
+    <div class="hint-sha"></div>
+  </div>
+</div>
+
+<div class="shots">
+  <h2>75Play 实机截图</h2>
+  <div class="grid">
+    <a href="screenshots/carplay-home.png" target="_blank"><img src="screenshots/carplay-home.png" alt="已连接 CarPlay 主页"></a>
+    <a href="screenshots/home.png" target="_blank"><img src="screenshots/home.png" alt="连接中心主页"></a>
+    <a href="screenshots/connecting.png" target="_blank"><img src="screenshots/connecting.png" alt="连接中"></a>
+    <a href="screenshots/settings-display.png" target="_blank"><img src="screenshots/settings-display.png" alt="设置·显示/音频"></a>
+    <a href="screenshots/settings-vehicle.png" target="_blank"><img src="screenshots/settings-vehicle.png" alt="设置·车辆/系统"></a>
+    <a href="screenshots/connected-manage.png" target="_blank"><img src="screenshots/connected-manage.png" alt="已连接·管理应用"></a>
+  </div>
+</div>
+
+<footer>
+  版本号、安装包大小与 sha256 均由 GitHub Releases API 实时读取，对应各仓库 Actions 的最新构建产物。<br>
+  独立开源项目 · 非 Apple 认证 · 与 Apple 或长安无隶属关系 · CarPlay 归 Apple Inc. 所有
+</footer>
+
+<script>
+(function () {
+  function sizeStr(n) { return (n / 1048576).toFixed(1) + " MB"; }
+  function dateStr(s) { return s ? s.slice(0, 10) : "—"; }
+  function first(list, test) { for (var i = 0; i < list.length; i++) { if (test(list[i])) return list[i]; } return null; }
+
+  function load(owner, repo, o) {
+    var card = document.getElementById(o.card);
+    var ver = document.getElementById(o.card + "-ver");
+
+    fetch("https://api.github.com/repos/" + owner + "/" + repo + "/releases?per_page=10")
+      .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
+      .then(function (list) {
+        var rel = first(list, function (x) { return !x.draft; });
+        if (!rel) throw new Error("no release");
+        if (ver) ver.textContent = rel.tag_name;
+
+        var dt = document.getElementById(o.card + "-date");
+        if (dt) dt.textContent = "发布 " + dateStr(rel.published_at);
+
+        var pre = document.getElementById(o.card + "-pre");
+        if (pre && rel.prerelease) { pre.textContent = "测试版"; pre.className = "chip badge-pre"; }
+
+        var apk = first(rel.assets, o.apk);
+        if (apk) {
+          var btn = document.getElementById(o.btn);
+          if (btn) {
+            btn.href = apk.browser_download_url;
+            var sz = document.getElementById(o.card + "-size");
+            if (sz) sz.textContent = sizeStr(apk.size);
+          }
+        }
+
+        if (o.second) {
+          var sec = first(rel.assets, o.second);
+          var secBtn = document.getElementById(o.secondBtn);
+          if (sec && secBtn) {
+            secBtn.href = sec.browser_download_url;
+            secBtn.textContent = o.secondLabel + " · " + sizeStr(sec.size);
+          }
+        }
+
+        if (o.sha) {
+          var shaAsset = first(rel.assets, o.sha);
+          if (shaAsset) {
+            var shaBtn = document.getElementById(o.card + "-sha");
+            if (shaBtn) shaBtn.href = shaAsset.browser_download_url;
+            fetch(shaAsset.browser_download_url)
+              .then(function (r) { return r.text(); })
+              .then(function (t) {
+                var box = card.querySelector(".hint-sha");
+                if (!box) return;
+                var line = o.shaLine ? first(t.split(/\r?\n/), o.shaLine) : t;
+                box.innerHTML = "sha256：<code>" + (line || t).replace(/\s+/g, " ").trim() + "</code>";
+              })
+              .catch(function () {});
+          }
+        }
+      })
+      .catch(function () { if (ver) ver.textContent = "打开 Releases 查看最新版"; });
+  }
+
+  load("chansLam", "75Play", {
+    card: "p1", btn: "p1-btn",
+    apk: function (a) { return /\.apk$/i.test(a.name); },
+    sha: function (a) { return /\.sha256$/i.test(a.name); }
+  });
+
+  load("chansLam", "WT-Launcher", {
+    card: "p2", btn: "p2-btn",
+    apk: function (a) { return /car-platform.*\.apk$/i.test(a.name); },
+    second: function (a) { return /avd.*\.apk$/i.test(a.name); },
+    secondBtn: "p2-avd", secondLabel: "模拟器包",
+    sha: function (a) { return /SHA256SUMS/i.test(a.name); }
+  });
+})();
+</script>
 </body>
 </html>
